@@ -14,6 +14,15 @@ EXEC SILVER.LOAD_SILVER;
 
 ============================================================================
 
+SCRIPT PURPOSE:
+This stored procedure performs the ETL (Extract, Transform, Load) process to populate the 'silver' schema tables from the pronze schema.
+
+ACTIONS PERFORMED:
+- Truncates Silver tables.
+- Inserts transformed and cleansed data from Bronze into Silver tables.
+
+============================================================================
+
 ADD PRINTS => TO TRACK EXECUTION, DEBUG ISSUES, AND UNDERSTAND ITS FLOW.
 
 ============================================================================
@@ -303,5 +312,6 @@ BEGIN
 
 
 END
+
 
 EXEC silver.load_silver;
