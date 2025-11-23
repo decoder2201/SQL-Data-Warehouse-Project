@@ -1,0 +1,14 @@
+USE datawarehouse;
+
+-- TO CHECK CID AND MAKE FOR CONNECTION PURPOSE
+
+SELECT 
+REPLACE(CID,'-','') AS CID,
+CNTRY
+FROM BRONZE.erp_loc_a101 WHERE REPLACE(CID,'-','') NOT IN 
+(SELECT cst_key FROM silver.crm_cust_info);
+
+-- DATA STANDARIZATION AND CONSISTENCY 
+SELECT DISTINCT CNTRY FROM bronze.erp_loc_a101;
+
+SELECT * FROM silver.erp_loc_a101;
